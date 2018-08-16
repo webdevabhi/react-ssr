@@ -5,6 +5,7 @@ class Home extends Component {
         return (
             <div>
                 <div>I'm the <b><i>BEST</i></b> home component</div>
+                <button onClick={() => console.log('Hi There !')}>Press Me !</button>
             </div>
         );
     }
