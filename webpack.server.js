@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
+const webpackNodeExternals = require('webpack-node-externals');
 
 const config = {
    
@@ -15,7 +16,10 @@ const config = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'build')
-    }
+    },
+
+    // Tell webpack not to include nude_modules library into bundle.js
+    externals: [webpackNodeExternals()]
 };
 
 module.exports = merge(baseConfig, config);
