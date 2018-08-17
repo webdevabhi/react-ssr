@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import * as actions from "../actions";
+import { fetchUsers } from "../actions";
 
 class UsersList extends Component {
 
     componentDidMount() {
-
+        this.props.fetchUsers();
     }
 
     renderUsers() {
@@ -18,6 +18,10 @@ class UsersList extends Component {
         return (
             <div>
                 Here's a big list users:
+
+                <ul>
+                    {this.renderUsers()}
+                </ul>
             </div>
         );
     }
@@ -29,10 +33,4 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchUsers: () => dispatch(actions.fetchUsers)
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersList);
+export default connect(mapStateToProps, { fetchUsers })(UsersList);
