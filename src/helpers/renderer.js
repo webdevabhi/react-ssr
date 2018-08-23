@@ -18,6 +18,8 @@ export default (req, store) => {
     return `
         <html>
             <head>
+                <!-- Compiled and minified CSS -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
             </head>
 
             <body>
@@ -26,6 +28,9 @@ export default (req, store) => {
                     window.INITIAL_STATE = ${serialize(store.getState())}
                 </script>
                 <script src="bundle.js"></script>
+                
+                <!-- Compiled and minified JavaScript -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
             </body>
         </html>
     `;
