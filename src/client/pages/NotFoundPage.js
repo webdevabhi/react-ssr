@@ -5,7 +5,7 @@ const NotFoundPage = ({ staticContext = {} }) => {
     console.log(staticContext);
     return (
         <div>
-            <h1>Ooops, Route not found</h1>
+            <h5>Ooops, Route not found</h5>
         </div>
     );
 };
