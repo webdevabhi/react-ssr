@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 
 export default (ChildComponent) => {
     class RequireAuth extends Component {
+        
         render() {
             switch (this.props.auth) {
                 case false:
@@ -14,7 +15,7 @@ export default (ChildComponent) => {
                     return <div>Loding ....</div>
             
                 default:
-                    return <ChildComponent {...props} />
+                    return <ChildComponent {...this.props} />
             }
         }
     }
